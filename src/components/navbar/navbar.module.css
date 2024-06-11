@@ -1,3 +1,44 @@
 .container {
-  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+.social {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+}
+.logo {
+  flex: 2;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+.links {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  font-size: 20px;
+}
+
+@media screen and(max-width:1280px) {
+  .logo {
+    font-size: 32px;
+  }
+  .links {
+    font-size: 18px;
+  }
+}
+@media screen and(max-width:1024px) {
+  .social {
+    display: none;
+  }
+  .logo {
+    text-align: left;
+  }
+  .links {
+    font-size: 18px;
+  }
 }

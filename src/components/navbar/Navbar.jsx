@@ -9,11 +9,26 @@ const Navbar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.social}>
-        <Image src="/images/instagram.png" alt="instagram" width={25} height={25} />
-        <Image src="/images/facebook.png" alt="facebook" width={25} height={25} />
-        <Image src="/images/youtube.png" alt="youtube" width={25} height={25} />
+        <Image
+          src="/images/instagram.png"
+          alt="instagram"
+          width={25}
+          height={25}
+        />
+        <Image
+          src="/images/facebook.png"
+          alt="facebook"
+          width={25}
+          height={25}
+        />
+        <Image
+          src="/images/youtube.png"
+          alt="youtube"
+          width={25}
+          height={25}
+        />
       </div>
-      <div className={styles.logo}>Ini Logo</div>
+      <div className={styles.logo}>RS Siaga Utama</div>
       <div className={styles.links}>
         <ThemeToggle />
         <Link href="/">Homepage</Link>
