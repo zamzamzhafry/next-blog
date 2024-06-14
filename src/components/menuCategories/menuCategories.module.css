@@ -1,0 +1,41 @@
+.categoryList {
+  margin-top: 35px;
+  margin-bottom: 60px;
+  display: flex;
+  /* flex-direction: column; */
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.categoryItem {
+  padding: 10px 25px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.food {
+  background-color: #7fb881;
+}
+
+.travel {
+  background-color: #ff7857;
+}
+
+.coding {
+  background-color: #ffb14f;
+}
+
+.hobby {
+  background-color: #775aec;
+}
+
+.sport {
+  background-color: #ff7887;
+}
+
+.fashion {
+  background-color: #ff7887;
+}
+.style {
+  background-color: rgb(236, 103, 103);
+}

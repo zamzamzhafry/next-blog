@@ -1,8 +1,11 @@
+/* styles/globals.css */
+
 :root {
   --bg: #ffffff; /* Default light theme background */
   --textColor: #000000; /* Default light theme text color */
   --softBg: #f0f0f0; /* Default light theme soft background */
   --softTextColor: #626262; /* Default light theme soft text color */
+  font-family: var(--font-family, 'Inter', sans-serif);
 }
 
 * {

@@ -1,3 +1,92 @@
 .container {
   /* background-color: red; */
+  flex: 2;
+  margin-top: 60px;
+  /* flex-direction: column; */
+}
+
+.imageContainer {
+  flex: 1;
+  aspect-ratio: 1/1;
+  position: relative;
+  /* 
+  height: 50px; */
+  /* border-radius: 50%; */
+  /* display: none; */
+}
+
+.image {
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+}
+.subtitle {
+  color: orangered;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.items {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.textContainer {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: capitalize;
+  width: 15%;
+  height: 80px;
+  justify-content: center;
+  border-radius: 10px;
+}
+.category.travel {
+  background-color: #ff7857;
+  width: max-content;
+}
+
+.category.style {
+  background-color: red;
+}
+
+.postTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--softTextColor);
+}
+
+.detail {
+  font-size: 12px;
+}
+
+.date {
+  color: gray;
 }
