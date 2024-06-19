@@ -39,3 +39,9 @@
 .style {
   background-color: rgb(236, 103, 103);
 }
+
+/* @media screen and (max-width: 768px) {
+  .categoryList {
+    display: none;
+  }
+} */

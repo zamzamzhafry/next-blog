@@ -3,11 +3,11 @@ import styles from './card.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const card = () => {
+export const Card = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
-        <Image src="/images/p1.jpeg" alt="featured" fill className={styles.image} />
+        <Image src="/images/p1.jpeg" alt="featured" layout="fill" className={styles.image} />
       </div>
       <div className={styles.textContainer}>
         <div className={styles.detail}>
@@ -30,4 +30,4 @@ export const card = () => {
   );
 };
 
-export default card;
+export default Card;

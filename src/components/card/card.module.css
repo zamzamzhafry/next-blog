@@ -1,5 +1,8 @@
+/* card.module.css */
+
 /* Default styles for larger screens */
 .container {
+  /* background-color: aqua; */
   margin-bottom: 50px;
   display: flex;
   align-items: center;
@@ -57,14 +60,18 @@
   }
 
   .imageContainer {
-    /* position: relative; */
+    padding: 100px 0px;
+    margin: 0px 0px;
+    background-color: aqua;
+    border-radius: 20px;
     order: 1; /* Ensure image comes first */
     width: 100%; /* Full width for the image container */
-    height: 50%; /* Adjust height as needed */
+    height: auto; /* Adjust height as needed */
     display: block; /* Ensure the image container is displayed */
   }
 
   .textContainer {
+    /* background-color: red; */
     order: 2; /* Ensure text comes second */
   }
 }

@@ -6,7 +6,7 @@ import Link from 'next/link';
 const authLinks = () => {
   const [open, setOpen] = useState(false);
 
-  const status = 'authenticated';
+  const status = 'notauthenticated';
 
   return (
     <>
