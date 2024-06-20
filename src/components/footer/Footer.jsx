@@ -9,7 +9,7 @@ const Footer = () => {
       <div className={styles.info}>
         {/* <div className={styles.logo}>RS Siaga Utama</div> */}
         <div className={styles.logo}>
-          <Image src={'/images/logo.png'} alt="logo" width={75} height={75} />
+          <Image src={'/images/logo_rs.png'} alt="logo" width={75} height={75} className={styles.logoIcon} />
           <h1 className={styles.logoText}>RS Siaga Utama</h1>
         </div>
         <p className={styles.desc}>

@@ -2,8 +2,6 @@
 import React from 'react';
 import styles from './writePage.module.css';
 import { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.bubble.css';
 
