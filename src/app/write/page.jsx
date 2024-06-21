@@ -4,6 +4,8 @@ import styles from './writePage.module.css';
 import { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.bubble.css';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 // import { byPrefixAndName } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,8 +15,22 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const WritePage = () => {
+  //write section
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState('');
+  // auth section
+
+  const { status } = useSession();
+
+  const router = useRouter();
+
+  if (status === 'loading') {
+    return <div className={styles.loading}>Loading...</div>;
+  }
+
+  if (status === 'authenticated') {
+    // router.push('/');
+  }
   return (
     <div className={styles.container}>
       <input type="text" placeholder="Masukkan Judul Berita" className={styles.input} />
