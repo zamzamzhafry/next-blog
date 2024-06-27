@@ -1,0 +1,71 @@
+import React from 'react';
+import Styles from './singlePage.module.css';
+import Image from 'next/image';
+import Menu from '@/components/Menu/Menu';
+import Comments from '@/components/comments/Comments';
+
+// import DOMPurify from 'dompurify';
+import DOMPurify from 'isomorphic-dompurify';
+
+const getData = async (slug) => {
+  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+    cache: 'no-store',
+  });
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  const data = await res.json();
+  // this returned with array of data i wanted
+  console.log(data);
+  data.desc = DOMPurify.sanitize(data?.desc || '');
+  // data.desc = DOMPurify.sanitize(data?.desc || '');
+  return data;
+};
+const SinglePage = async ({ params }) => {
+  const { slug } = params;
+
+  const data = await getData(slug);
+  // but this returned undefined
+  console.log(data?.title);
+  return (
+    <div className={Styles.container}>
+      <div className={Styles.infoContainer}>
+        <div className={Styles.textContainer}>
+          <h1 className={Styles.title}>{data?.title}</h1>
+          <div className={Styles.user}>
+            <div className={Styles.userImageContainer}>
+              <Image src="/images/p1.jpeg" alt="featured" fill className={Styles.avatar}></Image>
+            </div>
+            <div className={Styles.userTextContainer}>
+              <span className={Styles.username}>{data?.user}</span>
+              <span className={Styles.date}>12.02.2022</span>
+            </div>
+          </div>
+        </div>
+        {data?.img && (
+          <div className={Styles.imageContainer}>
+            <Image src={data.img} alt="featured" fill className={Styles.image}></Image>
+          </div>
+        )}
+      </div>
+
+      <div className={Styles.content}>
+        <div className={Styles.post}>
+          <div
+            className={Styles.description}
+            // dangerouslySetInnerHTML={{ __html: data?.desc }}
+            dangerouslySetInnerHTML={{ __html: data?.desc }}
+          />
+          <div className={Styles.comment}>
+            <Comments />
+          </div>
+        </div>
+        <Menu />
+      </div>
+    </div>
+  );
+};
+
+export default SinglePage;

@@ -3,6 +3,7 @@
   color: white;
   text-align: center;
   padding: 5px 10px;
+  text-transform: capitalize;
 }
 
 .content {
