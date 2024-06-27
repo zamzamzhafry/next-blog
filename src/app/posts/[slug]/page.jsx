@@ -22,11 +22,6 @@ const SinglePage = async ({ params }) => {
 
   const response = await getData(slug);
   const data = response.data;
-  const userData = data.user;
-  // returned expected data content array
-  console.log(data);
-  // undefined
-  console.log(userData);
 
   return (
     <div className={styles.container}>
