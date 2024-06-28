@@ -17,25 +17,25 @@ const fetcher = async (url) => {
     throw error;
   }
 
-  console.log('ini isis dari fetcher', data.comments);
+  console.log('ini isis dari fetcher', data);
   return data;
 };
 
 const Comments = ({ postSlug }) => {
   const { status } = useSession();
 
-  const { data, mutate, isLoading } = useSWR(`http://localhost:3000/api/comments?postSlug=${postSlug}`, fetcher);
+  const { data, isLoading, mutate } = useSWR(`http://localhost:3000/api/comments?postSlug=${postSlug}`, fetcher);
 
   const [desc, setDesc] = useState('');
   // const komentar = data.comments;
 
-  // const handleSubmit = async () => {
-  //   await fetch('/api/comments', {
-  //     method: 'POST',
-  //     body: JSON.stringify({ desc, postSlug }),
-  //   });
-  //   mutate();
-  // };
+  const handleSubmit = async () => {
+    await fetch('/api/comments', {
+      method: 'POST',
+      body: JSON.stringify({ desc, postSlug }),
+    });
+    mutate();
+  };
 
   return (
     <div className={styles.container}>
@@ -47,10 +47,7 @@ const Comments = ({ postSlug }) => {
             className={styles.input}
             onChange={(e) => setDesc(e.target.value)}
           />
-          <button
-            className={styles.button}
-            // onClick= {handleSubmit}
-          >
+          <button className={styles.button} onClick={handleSubmit}>
             Send
           </button>
         </div>
@@ -60,7 +57,7 @@ const Comments = ({ postSlug }) => {
       <div className={styles.comments}>
         {isLoading
           ? 'loading'
-          : data.comments?.map((item) => (
+          : data?.map((item) => (
               <div className={styles.comment} key={item._id}>
                 <div className={styles.user}>
                   {/* {item} */}
@@ -69,7 +66,7 @@ const Comments = ({ postSlug }) => {
                   )}
                   <div className={styles.userInfo}>
                     <span className={styles.username}>{item.user.name}</span>
-                    <span className={styles.date}>{item.createdAt}</span>
+                    <span className={styles.date}>{item.createdAt.substring(0, 10)}</span>
                   </div>
                 </div>
                 <p className={styles.desc}>{item.desc}</p>
