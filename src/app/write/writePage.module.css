@@ -14,7 +14,17 @@
 .input::placeholder {
   color: #b3b3b1;
 }
+.select {
+  padding: 10px;
+  font-size: large;
+  border: none;
+  outline: none;
+  color: var(--textColor);
+  text-align: left;
+  background-color: var(--bg);
 
+  /* background-color: transparent; */
+}
 .button,
 .addButton {
   width: 36px;
@@ -49,10 +59,7 @@
 
 .publish {
   position: relative;
-  top: -40px;
-  right: 0;
-  width: 100%;
-  max-width: 300px;
+  max-width: fit-content;
   margin: 0 auto;
   padding: 10px 20px;
   border: none;

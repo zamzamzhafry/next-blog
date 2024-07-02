@@ -16,6 +16,7 @@ const getData = async () => {
   return data;
 };
 
+// TODO: still error on misisng keychild
 const CategoryList = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);

@@ -10,6 +10,7 @@
 
 #public images
 /public/images
+/public/carousel
 # next.js
 /.next/
 /out/

@@ -1,0 +1,36 @@
+.container {
+  /* width: 100%; */
+  height: fit-content;
+  position: relative;
+  margin-top: 20px;
+}
+
+.imageContainer {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* width: 100%; */
+  height: 100%;
+  overflow: hidden;
+  background-color: aquamarine;
+}
+
+.imageWrapper {
+  position: relative;
+  /* top: 0;
+  left: 0; */
+  /* width: 100%; */
+  height: 800px;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  object-fit: cover; /* Ensure the whole image is visible without cropping */
+  width: 100%;
+  height: 100%;
+}

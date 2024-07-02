@@ -4,6 +4,7 @@ import CategoryList from '@/components/categoryList/CategoryList';
 import CardList from '@/components/cardList/CardList';
 import Menu from '@/components/Menu/Menu';
 import React from 'react';
+import ImageCarousel from '@/components/imageCarousel/ImageCarousel';
 // import Link from "next/link";
 // import Navbar from "@/components/navbar/Navbar";
 // import Footer from "@/components/footer/Footer";
@@ -14,6 +15,7 @@ export default function Home({ searchParams }) {
   return (
     <div className={styles.container}>
       <Featured />
+      <ImageCarousel />
       <CategoryList />
       <div className={styles.content}>
         <CardList page={page} />
