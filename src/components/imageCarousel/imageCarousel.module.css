@@ -1,36 +1,55 @@
-.container {
-  /* width: 100%; */
-  height: fit-content;
+.heroContainer {
+  width: 100%;
+  height: 100vh; /* Full viewport height */
   position: relative;
-  margin-top: 20px;
 }
 
-.imageContainer {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* width: 100%; */
+.swiper {
+  width: 100%;
   height: 100%;
-  overflow: hidden;
-  background-color: aquamarine;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .imageWrapper {
   position: relative;
-  /* top: 0;
-  left: 0; */
-  /* width: 100%; */
-  height: 800px;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
 .image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* transform: translate(-50%, -50%); */
-  object-fit: cover; /* Ensure the whole image is visible without cropping */
+  object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .image {
+    height: 100%;
+    width: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .image {
+    width: 100%;
+    height: auto;
+  }
 }

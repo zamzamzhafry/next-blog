@@ -1,15 +1,15 @@
 'use client';
 
 import React from 'react';
-import styles from './imageCarousel.module.css';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import styles from './imageCarousel.module.css';
 
 const ImageCarousel = () => {
-  const carousel = [
+  const carouselImages = [
     '/carousel/1.png',
     '/carousel/2.png',
     '/carousel/3.png',
@@ -17,28 +17,27 @@ const ImageCarousel = () => {
     '/carousel/5.png',
     '/carousel/6.png',
     '/carousel/7.png',
+    '/carousel/8.png',
   ];
 
   return (
-    <div className={styles.container}>
-      <div className={styles.imageContainer}>
-        <Swiper
-          pagination={{
-            dynamicBullets: true,
-          }}
-          modules={[Pagination]}
-          className="mySwiper"
-        >
-          {carousel.map((item, index) => (
-            // <Image key={index} src={item} alt={`Slide ${index + 1}`} fill className={styles.image} />
-            <SwiperSlide key={index} className={styles.imageWrapper}>
-              <span>Slide {index + 1}</span>
-              <span>Slide {index + 1}</span>
-              <Image src={item} alt={`Slide ${index + 1}`} fill className={styles.image} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+    <div className={styles.heroContainer}>
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        pagination={{ dynamicBullets: true }}
+        autoplay={{ delay: 3000 }}
+        loop={true}
+        className={styles.swiper}
+      >
+        {carouselImages.map((src, index) => (
+          <SwiperSlide key={index} className={styles.slide}>
+            <div className={styles.imageWrapper}>
+              <Image src={src} alt={`Slide ${index + 1}`} layout="fill" objectFit="cover" className={styles.image} />
+              <div className={styles.overlay}></div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
