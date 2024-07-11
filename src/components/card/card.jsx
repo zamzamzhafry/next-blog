@@ -1,9 +1,18 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useState } from 'react';
 import styles from './card.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import DOMPurify from 'isomorphic-dompurify';
 
 export const Card = ({ key, item }) => {
+  const [sanitizedDesc, setSanitizedDesc] = useState('');
+  useEffect(() => {
+    // Sanitize the description only on the client side
+    setSanitizedDesc(DOMPurify.sanitize(item?.desc || ''));
+  }, [item.desc]);
+
+  // item.desc = DOMPurify.sanitize(item?.desc || '');
   return (
     <div className={styles.container} key={key}>
       {item.img && (
@@ -19,7 +28,10 @@ export const Card = ({ key, item }) => {
         <Link href={`/posts/${item.slug}`}>
           <h1>{item.title}</h1>
         </Link>
-        <p className={styles.desc}>{item.desc.substring(0, 60)}</p>
+        {/* <p className={styles.desc}>{item.desc.substring(0, 60)}</p> */}
+        <div className={styles.description}>
+          <p dangerouslySetInnerHTML={{ __html: sanitizedDesc.substring(0, 60) }}></p>
+        </div>
         <Link href={`/posts/${item.slug}`} className={styles.link}>
           Read More
         </Link>

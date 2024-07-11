@@ -17,7 +17,7 @@ const fetcher = async (url) => {
     throw error;
   }
 
-  console.log('ini isis dari fetcher', data);
+  // console.log('ini isis dari fetcher', data);
   return data;
 };
 
