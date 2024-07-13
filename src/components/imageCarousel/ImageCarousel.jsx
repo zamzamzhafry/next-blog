@@ -9,16 +9,7 @@ import 'swiper/css/pagination';
 import styles from './imageCarousel.module.css';
 
 const ImageCarousel = () => {
-  const carouselImages = [
-    '/carousel/1.png',
-    '/carousel/2.png',
-    '/carousel/3.png',
-    '/carousel/4.png',
-    '/carousel/5.png',
-    '/carousel/6.png',
-    '/carousel/7.png',
-    '/carousel/8.png',
-  ];
+  const carouselImages = ['/carousel/8.png'];
 
   return (
     <div className={styles.heroContainer}>
@@ -32,6 +23,7 @@ const ImageCarousel = () => {
         {carouselImages.map((src, index) => (
           <SwiperSlide key={index} className={styles.slide}>
             <div className={styles.imageWrapper}>
+              <p>Slide {index + 1}</p>
               <Image src={src} alt={`Slide ${index + 1}`} layout="fill" objectFit="cover" className={styles.image} />
               <div className={styles.overlay}></div>
             </div>

@@ -89,3 +89,11 @@ model Comment {
   postSlug  String
   post      Post     @relation(fields: [postSlug], references: [slug])
 }
+
+model Banner{
+  id String @id @default(cuid()) @map("_id")
+  createdAt DateTime @default(now())
+  slug      String    @unique
+  title     String
+  img       String?
+}
