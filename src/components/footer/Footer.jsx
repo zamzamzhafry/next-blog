@@ -1,11 +1,32 @@
+'use client';
+
 import React from 'react';
 import styles from './footer.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import LeafletMap from '../LeafletMap/LeafletMap';
+
+import { useState } from 'react';
+
+// import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+
+// import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 
 const Footer = () => {
+  const [showMap, setShowMap] = useState(false);
+
+  const handleClick = () => {
+    setShowMap(true);
+  };
   return (
     <div className={styles.container}>
+      <div className={styles.leafletmap}>
+        {/* <p onClick={handleClick} style={{ cursor: 'pointer' }}>
+          Show Map
+        </p>
+        {showMap && <LeafletMap />} */}
+        <LeafletMap />
+      </div>
       <div className={styles.info}>
         {/* <div className={styles.logo}>RS Siaga Utama</div> */}
         <div className={styles.logo}>

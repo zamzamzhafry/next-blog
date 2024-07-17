@@ -5,6 +5,7 @@ import CardList from '@/components/cardList/CardList';
 import Menu from '@/components/Menu/Menu';
 import React from 'react';
 import ImageCarousel from '@/components/imageCarousel/ImageCarousel';
+import Assurance from '@/components/assurance/Assurance';
 // import Link from "next/link";
 // import Navbar from "@/components/navbar/Navbar";
 // import Footer from "@/components/footer/Footer";
@@ -21,6 +22,7 @@ export default function Home({ searchParams }) {
         <CardList page={page} />
         <Menu />
       </div>
+      <Assurance />
     </div>
   );
 }

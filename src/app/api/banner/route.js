@@ -14,7 +14,7 @@ export const GET = async (req) => {
   const page = searchParams.get('page');
   const cat = searchParams.get('cat');
 
-  const POST_PER_PAGE = 2;
+  const POST_PER_PAGE = 5;
 
   // This query object is used to define the parameters for the database query.
   // It specifies how many posts to retrieve (POST_PER_PAGE) and how many posts to skip (POST_PER_PAGE * (page - 1)).
@@ -24,7 +24,7 @@ export const GET = async (req) => {
     skip: POST_PER_PAGE * (page - 1), // Number of posts to skip
     where: {
       ...(cat && { catSlug: cat }), // Filter results by category slug if provided
-    },
+    }, 
   };
   try {
     // const posts = await prisma.post.findMany({

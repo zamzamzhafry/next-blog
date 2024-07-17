@@ -69,6 +69,11 @@ const WritePage = () => {
       .replace(/[\s_-]+/g, '-')
       .replace(/^-+|-+$/g, '');
 
+  /**
+   * Function to handle form submission for creating a new post.
+   *
+   * @return {Promise<void>} - Promise that resolves after submitting the form
+   */
   const handleSubmit = async () => {
     const res = await fetch('/api/posts', {
       method: 'POST',

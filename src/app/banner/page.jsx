@@ -87,7 +87,10 @@ const Banner = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Upload Banner</h1>
       <input type="text" placeholder="Masukkan Judul" className={styles.input} />
-      <input type="file" placeholder="Upload Banner" className={styles.file} accept="image/*" />
+      <button>
+        <label htmlFor="file">Upload Banner</label>
+        <input type="file" id="file" className={styles.file} accept="image/*" />
+      </button>
       <button className={styles.publish} onClick={handleSubmit}>
         Publish
       </button>

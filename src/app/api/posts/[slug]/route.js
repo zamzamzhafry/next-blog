@@ -1,6 +1,13 @@
 import prisma from '@/utils/connect';
 import { NextResponse } from 'next/server';
 
+/**
+ * Handles the GET request to update a post's views.
+ *
+ * @param {Object} req - The request object
+ * @param {Object} params - The parameters object containing the slug
+ * @return {NextResponse} A response with the updated post data or an error message
+ */
 export const GET = async (req, { params }) => {
   const { slug } = params;
   try {
