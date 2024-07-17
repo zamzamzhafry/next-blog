@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 import styles from './imageCarousel.module.css';
 
 const ImageCarousel = () => {
-  const carouselImages = ['/carousel/8.png'];
+  const carouselImages = ['/carousel/1.jpg', '/carousel/2.png', '/carousel/3.png'];
 
   return (
     <div className={styles.heroContainer}>

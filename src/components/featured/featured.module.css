@@ -16,6 +16,7 @@
   flex: 1;
   height: 500px;
   position: relative;
+  display: flex;
 }
 .textContainer {
   flex: 1;
@@ -72,7 +73,7 @@
   .title {
     font-size: 48px;
   }
-  .imgContainer { 
+  .imgContainer {
     height: 300px;
   }
 }

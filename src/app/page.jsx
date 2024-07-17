@@ -6,6 +6,7 @@ import Menu from '@/components/Menu/Menu';
 import React from 'react';
 import ImageCarousel from '@/components/imageCarousel/ImageCarousel';
 import Assurance from '@/components/assurance/Assurance';
+import OnlineAdmission from '@/components/onlineAdmission/OnlineAdmission';
 // import Link from "next/link";
 // import Navbar from "@/components/navbar/Navbar";
 // import Footer from "@/components/footer/Footer";
@@ -17,6 +18,7 @@ export default function Home({ searchParams }) {
     <div className={styles.container}>
       <ImageCarousel />
       <Featured />
+      <OnlineAdmission />
       <CategoryList />
       <div className={styles.content}>
         <CardList page={page} />
