@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import styles from './onlineAdmission.module.css';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 // import Button from '@/components/button/Button';
 
 const OnlineAdmission = () => {

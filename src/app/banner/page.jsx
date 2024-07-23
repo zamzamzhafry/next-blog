@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+// import Image from 'next/image';
 import React from 'react';
 import styles from './bannerPage.module.css';
 import { useEffect, useState } from 'react';
@@ -13,12 +13,30 @@ import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/
 const Banner = () => {
   const { status } = useSession();
   const router = useRouter();
-  const [file, setFile] = useState(null);
+  const [
+    file,
+    // setFile
+  ] = useState(null);
   const [media, setMedia] = useState('');
-  const [title, setTitle] = useState('');
-  const [uploadProgress, setUploadProgress] = useState(0);
-  const [uploadComplete, setUploadComplete] = useState(false);
-  const [uploadError, setUploadError] = useState(false);
+  const [
+    title,
+    //  setTitle
+  ] = useState('');
+  const [
+    ,
+    // uploadProgress
+    setUploadProgress,
+  ] = useState(0);
+  const [
+    ,
+    // uploadComplete
+    setUploadComplete,
+  ] = useState(false);
+  const [
+    ,
+    // uploadError
+    setUploadError,
+  ] = useState(false);
 
   useEffect(() => {
     if (file) {

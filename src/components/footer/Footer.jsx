@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import LeafletMap from '../LeafletMap/LeafletMap';
 
-import { useState } from 'react';
+// import { useState } from 'react';
 
 // import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
